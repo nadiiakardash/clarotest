@@ -196,13 +196,14 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-8">
                             <p class="section-title">top 20</p>
-                            <table id="sortable">
+                            <table id="sortable" class="js-sort-table">
                                 <thead>
                                     <tr>
                                         <th class="num-column">№</th>
-                                        <th class="country-column">Country Name</th>
-                                        <th data-type="number" class="visitors-column">Number of Visitors</th>
-                                        <th class="cost-column">Average Cost for One Visitor</th>
+                                        <th class="country-column js-sort-string">Country Name</th>
+                                        <th data-type="number" class="visitors-column js-sort-number">Number of Visitors
+                                        </th>
+                                        <th class="cost-column js-sort-string">Average Cost for One Visitor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -455,41 +456,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -511,7 +477,6 @@
                     <div class="footer__nav">
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <!-- <li><a href="#">Order</a></li> -->
                             <li><a href="#">Traffic Statistics</a></li>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">About Us</a></li>
@@ -531,6 +496,7 @@
     <script src="js/aos.js"></script>
     <script src="js/rangeslider.js"></script>
     <script src="js/select2.min.js"></script>
+    <script src="js/sort-table.min.js"></script>
     <script src="js/common.js"></script>
 
     <script>
