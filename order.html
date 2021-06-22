@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container-ca">
+            <div class="row">
+                <div class="col-xl-4 col-lg-3 d-flex align-items-center">
+                    <div class="header__logo">
+                        <a href="#"><img src="img/logo.svg" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-9 d-flex justify-content-lg-end">
+                    <div class="header__navs">
+                        <nav class="header__menu">
+                            <ul>
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">order</a></li>
+                                <li><a href="#">traffic statistics</a></li>
+                                <li><a href="#">faq</a></li>
+                                <li><a href="#">blog</a></li>
+                                <li><a href="#">contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header__sign">
+                            <ul class="unloglist">
+                                <li><a href="#">login</a></li>
+                                <li><a href="#">registration</a></li>
+                            </ul>
+                            <ul class="loglist">
+                                <li><span>Hi, Alexander</span></li>
+                                <ul class="loglist__sublist">
+                                    <li>
+                                        <a href="#">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.9577 14.3062V16.0456C9.57369 16.0456 8.24641 16.5954 7.2678 17.574C6.28919 18.5526 5.73941 19.8799 5.73941 21.2638H4C4 19.4186 4.73304 17.6489 6.03785 16.344C7.34266 15.0392 9.11237 14.3062 10.9577 14.3062ZM10.9577 13.4365C8.07458 13.4365 5.73941 11.1013 5.73941 8.21824C5.73941 5.33516 8.07458 3 10.9577 3C13.8407 3 16.1759 5.33516 16.1759 8.21824C16.1759 11.1013 13.8407 13.4365 10.9577 13.4365ZM10.9577 11.6971C12.8797 11.6971 14.4365 10.1403 14.4365 8.21824C14.4365 6.29619 12.8797 4.73941 10.9577 4.73941C9.0356 4.73941 7.47883 6.29619 7.47883 8.21824C7.47883 10.1403 9.0356 11.6971 10.9577 11.6971ZM13.2145 18.4912C13.1043 18.0272 13.1043 17.5437 13.2145 17.0797L12.3518 16.5813L13.2215 15.075L14.0843 15.5734C14.4305 15.2454 14.8491 15.0035 15.3062 14.8672V13.8713H17.0456V14.8672C17.5083 15.0046 17.9257 15.2498 18.2675 15.5734L19.1303 15.075L20 16.5813L19.1373 17.0797C19.2474 17.5435 19.2474 18.0266 19.1373 18.4904L20 18.9887L19.1303 20.495L18.2675 19.9967C17.9213 20.3247 17.5027 20.5666 17.0456 20.7029V21.6987H15.3062V20.7029C14.8491 20.5666 14.4305 20.3247 14.0843 19.9967L13.2215 20.495L12.3518 18.9887L13.2145 18.4912ZM16.1759 19.0896C16.5219 19.0896 16.8537 18.9521 17.0984 18.7075C17.343 18.4628 17.4805 18.131 17.4805 17.785C17.4805 17.439 17.343 17.1072 17.0984 16.8626C16.8537 16.6179 16.5219 16.4805 16.1759 16.4805C15.8299 16.4805 15.4981 16.6179 15.2534 16.8626C15.0088 17.1072 14.8713 17.439 14.8713 17.785C14.8713 18.131 15.0088 18.4628 15.2534 18.7075C15.4981 18.9521 15.8299 19.0896 16.1759 19.0896Z"
+                                                    fill="#3E3E3E" />
+                                            </svg>
+                                            Personal Info
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11.1111 5H20V6.77778H11.1111V5ZM11.1111 8.55556H16.4444V10.3333H11.1111V8.55556ZM11.1111 13.8889H20V15.6667H11.1111V13.8889ZM11.1111 17.4444H16.4444V19.2222H11.1111V17.4444ZM4 5H9.33333V10.3333H4V5ZM5.77778 6.77778V8.55556H7.55556V6.77778H5.77778ZM4 13.8889H9.33333V19.2222H4V13.8889ZM5.77778 15.6667V17.4444H7.55556V15.6667H5.77778Z"
+                                                    fill="#3E3E3E" />
+                                            </svg>
+                                            Orders
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.52632 17.4737H8.21053V19.1579H18.3158V5.68421H8.21053V7.36842H6.52632V4.84211C6.52632 4.61877 6.61504 4.40457 6.77296 4.24665C6.93089 4.08872 7.14508 4 7.36842 4H19.1579C19.3812 4 19.5954 4.08872 19.7534 4.24665C19.9113 4.40457 20 4.61877 20 4.84211V20C20 20.2233 19.9113 20.4375 19.7534 20.5955C19.5954 20.7534 19.3812 20.8421 19.1579 20.8421H7.36842C7.14508 20.8421 6.93089 20.7534 6.77296 20.5955C6.61504 20.4375 6.52632 20.2233 6.52632 20V17.4737ZM8.21053 11.5789H14.1053V13.2632H8.21053V15.7895L4 12.4211L8.21053 9.05263V11.5789Z"
+                                                    fill="#3E3E3E" />
+                                            </svg>
+                                            Log out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <a href="#" class="adsbtn">
+                                Order
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="burger-btn">
+                <img src="img/burger.svg" alt="menu">
+            </button>
+        </div>
+    </header>
+    <div class="mobile-nav">
+        <div class="mob-nav__wrapp">
+            <button class="closemenu">
+                <img src="img/close.svg" alt="close">
+            </button>
+            <ul class="mobile-nav__menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Order</a></li>
+                <li><a href="#">Traffic Statistics</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="mobile-nav__sign">
+                <li><a href="#">login</a></li>
+                <li><a href="#">Registration</a></li>
+            </ul>
+            <ul class="mobile-nav__logined">
+                <li><span>Hi, Alexander</span></li>
+                <ul class="loglist__sublist">
+                    <li>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.9577 14.3062V16.0456C9.57369 16.0456 8.24641 16.5954 7.2678 17.574C6.28919 18.5526 5.73941 19.8799 5.73941 21.2638H4C4 19.4186 4.73304 17.6489 6.03785 16.344C7.34266 15.0392 9.11237 14.3062 10.9577 14.3062ZM10.9577 13.4365C8.07458 13.4365 5.73941 11.1013 5.73941 8.21824C5.73941 5.33516 8.07458 3 10.9577 3C13.8407 3 16.1759 5.33516 16.1759 8.21824C16.1759 11.1013 13.8407 13.4365 10.9577 13.4365ZM10.9577 11.6971C12.8797 11.6971 14.4365 10.1403 14.4365 8.21824C14.4365 6.29619 12.8797 4.73941 10.9577 4.73941C9.0356 4.73941 7.47883 6.29619 7.47883 8.21824C7.47883 10.1403 9.0356 11.6971 10.9577 11.6971ZM13.2145 18.4912C13.1043 18.0272 13.1043 17.5437 13.2145 17.0797L12.3518 16.5813L13.2215 15.075L14.0843 15.5734C14.4305 15.2454 14.8491 15.0035 15.3062 14.8672V13.8713H17.0456V14.8672C17.5083 15.0046 17.9257 15.2498 18.2675 15.5734L19.1303 15.075L20 16.5813L19.1373 17.0797C19.2474 17.5435 19.2474 18.0266 19.1373 18.4904L20 18.9887L19.1303 20.495L18.2675 19.9967C17.9213 20.3247 17.5027 20.5666 17.0456 20.7029V21.6987H15.3062V20.7029C14.8491 20.5666 14.4305 20.3247 14.0843 19.9967L13.2215 20.495L12.3518 18.9887L13.2145 18.4912ZM16.1759 19.0896C16.5219 19.0896 16.8537 18.9521 17.0984 18.7075C17.343 18.4628 17.4805 18.131 17.4805 17.785C17.4805 17.439 17.343 17.1072 17.0984 16.8626C16.8537 16.6179 16.5219 16.4805 16.1759 16.4805C15.8299 16.4805 15.4981 16.6179 15.2534 16.8626C15.0088 17.1072 14.8713 17.439 14.8713 17.785C14.8713 18.131 15.0088 18.4628 15.2534 18.7075C15.4981 18.9521 15.8299 19.0896 16.1759 19.0896Z"
+                                    fill="#fff"></path>
+                            </svg>
+                            Personal Info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.1111 5H20V6.77778H11.1111V5ZM11.1111 8.55556H16.4444V10.3333H11.1111V8.55556ZM11.1111 13.8889H20V15.6667H11.1111V13.8889ZM11.1111 17.4444H16.4444V19.2222H11.1111V17.4444ZM4 5H9.33333V10.3333H4V5ZM5.77778 6.77778V8.55556H7.55556V6.77778H5.77778ZM4 13.8889H9.33333V19.2222H4V13.8889ZM5.77778 15.6667V17.4444H7.55556V15.6667H5.77778Z"
+                                    fill="#fff"></path>
+                            </svg>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.52632 17.4737H8.21053V19.1579H18.3158V5.68421H8.21053V7.36842H6.52632V4.84211C6.52632 4.61877 6.61504 4.40457 6.77296 4.24665C6.93089 4.08872 7.14508 4 7.36842 4H19.1579C19.3812 4 19.5954 4.08872 19.7534 4.24665C19.9113 4.40457 20 4.61877 20 4.84211V20C20 20.2233 19.9113 20.4375 19.7534 20.5955C19.5954 20.7534 19.3812 20.8421 19.1579 20.8421H7.36842C7.14508 20.8421 6.93089 20.7534 6.77296 20.5955C6.61504 20.4375 6.52632 20.2233 6.52632 20V17.4737ZM8.21053 11.5789H14.1053V13.2632H8.21053V15.7895L4 12.4211L8.21053 9.05263V11.5789Z"
+                                    fill="#fff"></path>
+                            </svg>
+                            Log out
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <a href="#" class="adsbtn">Order<span></span></a>
+        </div>
+    </div>
+    <div class="mobile-nav__bg">
+    </div>
+
+    <main>
+        <div class="mainwrapper orderpage">
+            <div class="container-ca">
+                <div class="breadcrumbsect">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li>Order Form</li>
+                    </ul>
+                </div>
+                <div class="form-section">
+                    <form action="#">
+                        <div class="order-box trafficbox">
+                            <div class="order__header">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="title">1. Traffic Type</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="total-price">
+                                            <p>
+                                                total:
+                                                <span class="totaltext">
+                                                    $
+                                                    <span>0.05</span>
+                                                    /mo
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order__body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="radio" name="trafftype" id="trtype1" checked value="0.05">
+                                        <label for="trtype1" class="styledradinp">
+                                            <span>Non-unique visitors</span> (Multiple visits from same IP is possible)
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="radio" name="trafftype" id="trtype2" value="0.25">
+                                        <label for="trtype2" class="styledradinp">
+                                            <span>Unique visitors</span> (24-hour unique IP for each visitor)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-box visitorsbox">
+                            <div class="order__header">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="title">2. Choose Total Visitors
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="total-price">
+                                            <p>
+                                                total:
+                                                <span class="totaltext">
+                                                    $
+                                                    <span>0.50</span>
+                                                    /mo
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order__body">
+                                <div class="rangeslider-wrapp">
+                                    <div class="rangeslider__header">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <output class="output"></output>
+                                                <span class="output__inftext">targeted visitors/mo</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="infotext">Minimum order $10</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input class="rangesl" type="range" min="10000" max="1000000" step="1" value="1000">
+                                    <div class="rangeslider__footer">
+                                        <span>10 000</span>
+                                        <span>1 000 000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-box geoloc">
+                            <div class="order__header">
+                                <p class="title">3. Geolocation
+                                </p>
+                            </div>
+                            <div class="order__body">
+                                <div class="row">
+                                    <div class="geoloc__leftsect">
+                                        <div class="inpfield">
+                                            <input type="radio" name="geoloc" id="geoloc1" checked>
+                                            <label for="geoloc1" class="geoloc-radio">
+                                                Worldwide
+                                            </label>
+                                        </div>
+                                        <div class="inpfield">
+                                            <input type="radio" name="geoloc" id="geoloc2" checked>
+                                            <label for="geoloc2" class="geoloc-radio">
+                                                Select countries
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="geoloc__rightsect">
+                                        <div class="counrtysel2">
+                                            <select id="country-select" name="country" multiple="multiple"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-box timing-duration">
+                            <div class="order__header">
+                                <p class="title">4. Timing and Duration
+                                </p>
+                            </div>
+                            <div class="order__body">
+                                <div class="row">
+                                    <div class="geoloc__leftsect">
+                                        <p class="tdtext">Traffic delivery speed</p>
+                                        <div class="inpfield">
+                                            <input type="radio" name="timedur" id="td1" checked>
+                                            <label for="td1" class="geoloc-radio">
+                                                As fast as possible
+                                            </label>
+                                        </div>
+                                        <div class="inpfield">
+                                            <input type="radio" name="timedur" id="td2" checked>
+                                            <label for="td2" class="geoloc-radio">
+                                                Gradual delivery <span>(campaign length 1 to 30 days)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-box website">
+                            <div class="order__header">
+                                <p class="title">5. Website
+                                </p>
+                            </div>
+                            <div class="order__body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inpfield inpfield__textinp">
+                                            <input type="text" placeholder="Website Name">
+                                            <label for="">Website Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inpfield inpfield__textinp">
+                                            <input type="text" placeholder="Website URL">
+                                            <label for="">Website URL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-bottsect">
+                            <p class="title">Total USD: $<span>0.50</span>/mo</p>
+                            <div class="checkfield">
+                                <input type="checkbox" id="acceptcheck">
+                                <label for="acceptcheck">I accept the ClaroAds.com <a href="#" target='_blank'>terms</a>
+                                    and conditions, and will be charged $XXX</label>
+                            </div>
+                            <button type="submit" class="adsbtn adsbtn__blue">
+                                Confirm Order
+                                <span></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer blueline">
+        <div class="fblueline"></div>
+        <div class="container-ca">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer__text">
+                        <p>
+                            Before buying website traffic, please familiarize yourself with our Frequently Asked
+                            <a href="#">Questions</a> and read our <a href="#">Terms of Service</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Order</a></li>
+                            <li><a href="#">Traffic Statistics</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <a href="#" class="footer__fb">FACEBOOK</a>
+                    </div>
+                </div>
+            </div>
+            <p class="reservedtext">© CLARO ADS. 2020. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/rangeslider.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        (function ($) {
+            $(function () {
+                var isoCountries = [{
+                        id: 'US',
+                        text: 'United States'
+                    },
+                    {
+                        id: 'VT',
+                        text: 'Vietnam'
+                    },
+                    {
+                        id: 'IN',
+                        text: 'India'
+                    },
+                    {
+                        id: 'RU',
+                        text: 'Russia'
+                    },
+                    {
+                        id: 'UK',
+                        text: 'United Kingdom'
+                    },
+                    {
+                        id: 'TH',
+                        text: 'Thailand'
+                    },
+                    {
+                        id: 'AR',
+                        text: 'Argentina'
+                    },
+                    {
+                        id: 'CH',
+                        text: 'China'
+                    },
+                    {
+                        id: 'TK',
+                        text: 'Turkey'
+                    },
+                    {
+                        id: 'IND',
+                        text: 'Indonesia'
+                    },
+                    {
+                        id: 'KZ',
+                        text: 'Kazakhstan'
+                    },
+                    {
+                        id: 'IN',
+                        text: 'Iran'
+                    },
+                    {
+                        id: 'VZ',
+                        text: 'Venezuela'
+                    },
+                    {
+                        id: 'MA',
+                        text: 'Malaysia'
+                    },
+                    {
+                        id: 'BR',
+                        text: 'Brazil'
+                    },
+                    {
+                        id: 'LT',
+                        text: 'Lithuania'
+                    },
+                    {
+                        id: 'GR',
+                        text: 'Georgia'
+                    },
+                    {
+                        id: 'UA',
+                        text: 'Ukraine'
+                    },
+                    {
+                        id: 'LS',
+                        text: 'Laos'
+                    },
+                    {
+                        id: 'UZ',
+                        text: 'Uzbekistan'
+                    },
+                    {
+                        id: 'JN',
+                        text: 'Jordan'
+                    },
+                    {
+                        id: 'MX',
+                        text: 'Mexico'
+                    },
+                    {
+                        id: 'MG',
+                        text: 'Mongolia'
+                    },
+                    {
+                        id: 'PK',
+                        text: 'Pakistan'
+                    },
+                    {
+                        id: 'IQ',
+                        text: 'Iraq'
+                    },
+                    {
+                        id: 'SA',
+                        text: 'South Africa'
+                    },
+                    {
+                        id: 'AU',
+                        text: 'Australia'
+                    },
+                    {
+                        id: 'AS',
+                        text: 'Austria'
+                    },
+                ];
+
+                function formatCountry(country) {
+                    if (!country.id) {
+                        return country.text;
+                    }
+                    var $country = $(
+                        '<span class="flag-icon flag-icon-' + country.id.toLowerCase() +
+                        ' flag-icon-squared"></span>' +
+                        '<span class="flag-text">' + country.text + "</span>"
+                    );
+                    return $country;
+                };
+
+                $("[name='country']").select2({
+                    placeholder: "Select a country",
+                    templateResult: formatCountry,
+                    data: isoCountries
+                });
+
+            });
+        })(jQuery);
+    </script>
+    <style>
+        .flag-icon-us {
+            background-image: url('img/flags/flag-usa.svg');
+        }
+
+        .flag-icon-vt {
+            background-image: url('img/flags/flag-vietnam.svg');
+        }
+
+        .flag-icon-in {
+            background-image: url('img/flags/flag-india.svg');
+        }
+
+        .flag-icon-ru {
+            background-image: url('img/flags/flag-russia.svg');
+        }
+
+        .flag-icon-uk {
+            background-image: url('img/flags/flag-uk.svg');
+        }
+
+        .flag-icon-th {
+            background-image: url('img/flags/flag-thailand.svg');
+        }
+
+        .flag-icon-ar {
+            background-image: url('img/flags/flag-argentina.svg');
+        }
+
+        .flag-icon-ch {
+            background-image: url('img/flags/flag-china.svg');
+        }
+
+        .flag-icon-tk {
+            background-image: url('img/flags/flag-turkey.svg');
+        }
+
+        .flag-icon-ind {
+            background-image: url('img/flags/flag-indonesia.svg');
+        }
+
+        .flag-icon-kz {
+            background-image: url('img/flags/flag-kazakhstan.svg');
+        }
+
+        .flag-icon-in {
+            background-image: url('img/flags/flag-iran.svg');
+        }
+
+        .flag-icon-vz {
+            background-image: url('img/flags/flag-venezuela.svg');
+        }
+
+        .flag-icon-ma {
+            background-image: url('img/flags/flag-malaysia.svg');
+        }
+
+        .flag-icon-br {
+            background-image: url('img/flags/flag-brazil.svg');
+        }
+
+        .flag-icon-lt {
+            background-image: url('img/flags/flag-lithuania.svg');
+        }
+
+        .flag-icon-gr {
+            background-image: url('img/flags/flag-georgia.svg');
+        }
+
+        .flag-icon-ua {
+            background-image: url('img/flags/flag-ukraine.svg');
+        }
+
+        .flag-icon-ls {
+            background-image: url('img/flags/flag-laos.svg');
+        }
+
+        .flag-icon-uz {
+            background-image: url('img/flags/flag-uzbekistan.svg');
+        }
+
+        .flag-icon-jn {
+            background-image: url('img/flags/flag-jordan.svg');
+        }
+
+        .flag-icon-mx {
+            background-image: url('img/flags/flag-mexico.svg');
+        }
+
+        .flag-icon-mg {
+            background-image: url('img/flags/flag-mongolia.svg');
+        }
+
+        .flag-icon-pk {
+            background-image: url('img/flags/flag-pakistan.svg');
+        }
+
+        .flag-icon-iq {
+            background-image: url('img/flags/flag-iraq.svg');
+        }
+
+        .flag-icon-sa {
+            background-image: url('img/flags/flag-southafrica.svg');
+        }
+
+        .flag-icon-au {
+            background-image: url('img/flags/flag-australia.svg');
+        }
+
+        .flag-icon-as {
+            background-image: url('img/flags/flag-austria.svg');
+        }
+
+    </style>
+</body>
+
+</html>
