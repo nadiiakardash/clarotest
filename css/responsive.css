@@ -2403,9 +2403,17 @@
         padding-right: 35px;
     }
 
+    .contsection__form input {
+        height: 54px;
+    }
 
+    .contsection__form .adsbtn {
+        height: 58px;
+    }
 
-
+    .contsection__form textarea {
+        margin-bottom: 20px;
+    }
 
 
 
@@ -2473,9 +2481,54 @@
         margin-top: 35px;
     }
 
+    .termscontent {
+        padding: 50px 0 80px 0;
+    }
 
+    .termsblock .title {
+        font-size: 26px;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
 
+    .termsblock .descr ul li:not(:last-child) {
+        margin-bottom: 15px;
+    }
 
+    .termscontent {
+        background-size: 50%;
+    }
+
+    .contactscontent {
+        padding: 50px 0 80px;
+    }
+
+    .contsection__info,
+    .contsection__form {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .contsection {
+        flex-wrap: wrap;
+    }
+
+    .contsection__info {
+        margin-bottom: 20px;
+    }
+
+    .contsection__info ul {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contsection__info ul li {
+        width: 100%;
+        max-width: 50%;
+        flex: 0 0 50%;
+        padding-right: 10px;
+    }
 
 
 }
@@ -2521,8 +2574,14 @@
         width: 40px;
     }
 
+    .termsblock .title {
+        font-size: 24px;
+    }
 
-
+    .termsblock .descr p,
+    .termsblock .descr ul li {
+        font-size: 15px;
+    }
 
 
 
@@ -2642,10 +2701,61 @@
         margin-bottom: 50px;
     }
 
+    .traffstat__topscreen.trnew.trnew__terms {
+        min-height: 350px;
+        height: auto;
+        padding: 35px 0 20px;
+    }
 
+    .termscontent {
+        padding: 40px 0 70px 0;
+    }
 
+    .termsblock .title {
+        font-size: 22px;
+    }
 
+    .traffstat__topscreen.trnew.trnew__terms.contacts {
+        min-height: 260px;
+    }
 
+    .contsection__info ul li {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding-right: 0;
+    }
+
+    .contsection__info ul li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .contsection__info {
+        margin-bottom: 30px;
+    }
+
+    .contactscontent {
+        padding: 40px 0;
+    }
+
+    .contsection__form input {
+        height: 46px;
+        padding-left: 15px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contsection__form textarea {
+        padding: 15px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    .contsection__form .adsbtn {
+        height: 50px;
+        max-width: 100%;
+        width: 100%;
+    }
 
 }
 
