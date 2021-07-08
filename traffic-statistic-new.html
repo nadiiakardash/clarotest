@@ -51,6 +51,19 @@
         #sortable tbody p img {
             order: -1;
         }
+        #sortable .num-column {
+            width: 64px !important;
+        }
+        @media (max-width: 767.8px){
+            #sortable .num-column {
+                width: 40px !important;
+            }
+        }
+        @media (max-width: 575.8px){
+            #sortable .num-column {
+                width: 30px !important;
+            }
+        }
     </style>
 </head>
 
@@ -240,11 +253,11 @@
                                   </tfoot>
                                 <thead>
                                     <tr>
-                                        <th>№</th>
+                                        <th class="num-column">№</th>
                                         <th style="display: none;">Country Name</th>
-                                        <th>Country Name</th>
-                                        <th>Number of Visitors</th>
-                                        <th>Average Cost for One Visitor</th>
+                                        <th class="country-column ">Country Name</th>
+                                        <th class="visitors-column">Number of Visitors</th>
+                                        <th class="cost-column">Average Cost for One Visitor</th>
                                     </tr>
                                 </thead>
                                 <tbody class="traffic-statistic-table traffic-statistic-show">
