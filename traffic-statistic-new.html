@@ -13,10 +13,45 @@
     <!-- styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
     <link rel="stylesheet" href="css/select2.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/responsive.css">
-
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css"> -->
+    <style>
+        #sortable{
+            width: 100% !important;
+        }
+        .dataTables_length{
+            display: none;
+        }
+        .dataTables_filter{
+            display: none;
+        }
+        .dataTables_paginate {
+            display: none;
+        }
+        .dataTables_info {
+            display: none;
+        }
+        table.dataTable thead .sorting{
+            background-image: none !important;
+            background: none !important;
+        }
+        table.dataTable tbody th, table.dataTable tbody td{
+           padding-top: 0;
+           padding-bottom: 0;
+        }
+        table.dataTable tbody tr{
+            background: none;
+        }
+        tbody .selectedcountry {
+            background: rgba(59, 185, 255, 0.1) !important;
+        }
+        #sortable tbody p img {
+            order: -1;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,24 +61,25 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-3 d-flex align-items-center">
                     <div class="header__logo">
-                        <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
+                        <a href="#"><img src="img/logo.svg" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-9 d-flex justify-content-lg-end">
                     <div class="header__navs">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="index.html">home</a></li>
-                                <li><a href="traffic-statistic-new.html">traffic statistics</a></li>
-                                <li><a href="faq.html">faq</a></li>
-                                <li><a href="about-us.html">about us</a></li>
-                                <li><a href="contactus.html">contact</a></li>
+                                <li><a href="#">home</a></li>
+                                <!-- <li><a href="#">order</a></li> -->
+                                <li><a href="#">traffic statistics</a></li>
+                                <li><a href="#">faq</a></li>
+                                <li><a href="#">about us</a></li>
+                                <li><a href="#">contact</a></li>
                             </ul>
                         </nav>
                         <div class="header__sign">
                             <ul class="unloglist">
-                                <li><a href="https://login.claroads.com/login.php">login</a></li>
-                                <li><a href="https://login.claroads.com/signup.php">registration</a></li>
+                                <li><a href="#">login</a></li>
+                                <li><a href="#">registration</a></li>
                             </ul>
                             <ul class="loglist">
                                 <li><span>Hi, Alexander</span></li>
@@ -83,7 +119,7 @@
                                     </li>
                                 </ul>
                             </ul>
-                            <a href="https://login.claroads.com/signup.php" class="adsbtn">
+                            <a href="#" class="adsbtn">
                                 Order
                                 <span></span>
                             </a>
@@ -102,15 +138,16 @@
                 <img src="img/close.svg" alt="close">
             </button>
             <ul class="mobile-nav__menu">
-                <li><a href="index.html">home</a></li>
-                <li><a href="traffic-statistic-new.html">traffic statistics</a></li>
-                <li><a href="faq.html">faq</a></li>
-                <li><a href="about-us.html">about us</a></li>
-                <li><a href="contactus.html">contact</a></li>
+                <li><a href="#">Home</a></li>
+                <!-- <li><a href="#">Order</a></li> -->
+                <li><a href="#">Traffic Statistics</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
             <ul class="mobile-nav__sign">
-                <li><a href="https://login.claroads.com/login.php">login</a></li>
-                <li><a href="https://login.claroads.com/signup.php">registration</a></li>
+                <li><a href="#">login</a></li>
+                <li><a href="#">Registration</a></li>
             </ul>
             <ul class="mobile-nav__logined">
                 <li><span>Hi, Alexander</span></li>
@@ -150,7 +187,7 @@
                     </li>
                 </ul>
             </ul>
-            <a href="https://login.claroads.com/signup.php" class="adsbtn">Order<span></span></a>
+            <a href="#" class="adsbtn">Order<span></span></a>
         </div>
     </div>
     <div class="mobile-nav__bg">
@@ -161,7 +198,7 @@
             <div class="container-ca">
                 <div class="breadcrumbsect">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Traffic Statistics</li>
                     </ul>
                 </div>
@@ -192,269 +229,49 @@
                 <div class="container-ca">
                     <div class="row justify-content-center">
                         <div class="col-xl-8">
+                            <div id="testtable"></div>
                             <p class="section-title">top 20</p>
-                            <table id="sortable" class="js-sort-table">
+                            <table id="sortable" class="js-sort-table " data-order='[[ 3, "desc" ]]' data-page-length='20'>
+                                <tfoot style="display: none;">
+                                    <tr>
+                                      <th>num</th>
+                                      <th>Country Name</th>
+                                    </tr>
+                                  </tfoot>
                                 <thead>
                                     <tr>
-                                        <th class="num-column">№</th>
-                                        <th class="country-column js-sort-string">Country Name</th>
-                                        <th data-type="number" class="visitors-column js-sort-number">Number of Visitors
-                                        </th>
-                                        <th class="cost-column js-sort-string">Average Cost for One Visitor</th>
+                                        <th>№</th>
+                                        <th style="display: none;">Country Name</th>
+                                        <th>Country Name</th>
+                                        <th>Number of Visitors</th>
+                                        <th>Average Cost for One Visitor</th>
                                     </tr>
                                 </thead>
-                                <tbody class="traffic-statistic-table">
-                                    <!-- <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-vietnam.svg" alt="vietnam">
-                                                Vietnam
-                                            </p>
-                                        </td>
-                                        <td>
-                                            21 000 000
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-india.svg" alt="India">
-                                                India
-                                            </p>
-                                        </td>
-                                        <td>11 000 000</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-russia.svg" alt="Russia">
-                                                Russia
-                                            </p>
-                                        </td>
-                                        <td>11 000 000</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-uk.svg" alt="United Kingdom">
-                                                United Kingdom
-                                            </p>
-                                        </td>
-                                        <td>9 760 000</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-thailand.svg" alt="Thailand">
-                                                Thailand
-                                            </p>
-                                        </td>
-                                        <td>8 000 602</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-argentina.svg" alt="Argentina">
-                                                Argentina
-                                            </p>
-                                        </td>
-                                        <td>7 450 500
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-china.svg" alt="China">
-                                                China
-                                            </p>
-                                        </td>
-                                        <td>6 092 004
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-turkey.svg" alt="Turkey">
-                                                Turkey
-                                            </p>
-                                        </td>
-                                        <td>6 476 000
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-indonesia.svg" alt="Indonesia">
-                                                Indonesia
-                                            </p>
-                                        </td>
-                                        <td>5 354 098
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-kazakhstan.svg" alt="Kazakhstan">
-                                                Kazakhstan
-                                            </p>
-                                        </td>
-                                        <td>4 020 000
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>11</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-iran.svg" alt="Iran">
-                                                Iran
-                                            </p>
-                                        </td>
-                                        <td>4 000 000
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-venezuela.svg" alt="Venezuela">
-                                                Venezuela
-                                            </p>
-                                        </td>
-                                        <td>3 900 000
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>13</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-malaysia.svg" alt="Malaysia">
-                                                Malaysia
-                                            </p>
-                                        </td>
-                                        <td>3 000 000</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>14</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-brazil.svg" alt="Brazil">
-                                                Brazil
-                                            </p>
-                                        </td>
-                                        <td>2 055 000
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-lithuania.svg" alt="Lithuania">
-                                                Lithuania
-                                            </p>
-                                        </td>
-                                        <td>2 063 104
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>16</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-georgia.svg" alt="Georgia">
-                                                Georgia
-                                            </p>
-                                        </td>
-                                        <td>2 000 000</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>17</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-ukraine.svg" alt="Ukraine">
-                                                Ukraine
-                                            </p>
-                                        </td>
-                                        <td>1 909 082
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>18</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-laos.svg" alt="Laos">
-                                                Laos
-                                            </p>
-                                        </td>
-                                        <td>1 765 323
-                                        </td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>19</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-uzbekistan.svg" alt="Uzbekistan">
-                                                Uzbekistan
-                                            </p>
-                                        </td>
-                                        <td>1 450 000
-                                        </td>
-                                        <td><span>$ 0.2</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>20</td>
-                                        <td>
-                                            <p>
-                                                <img src="img/flags/flag-jordan.svg" alt="Jordan">
-                                                Jordan
-                                            </p>
-                                        </td>
-                                        <td>1 000 000</td>
-                                        <td><span>$ 0.1</span></td>
-                                    </tr> -->
+                                <tbody class="traffic-statistic-table traffic-statistic-show">
+
+                                </tbody>
+                                <tbody class="traffic-statistic-table traffic-statistic-app">
+
+                                </tbody>
+                                
+                            </table>
+                            <table class="js-sort-table  d-none">
+                                <tbody class="traffic-table-hide traffic-statistic-table">
+
                                 </tbody>
                             </table>
-
                             <div class="traffstat-pagination">
                                 <a href="#" class="traffstat-pagination__prev">Prev</a>
-                                <p>1-20 of 40</p>
+                                <p>---</p>
                                 <a href="#" class="traffstat-pagination__next">Next</a>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </main>
-
+    
     <footer class="footer blueline">
         <div class="fblueline"></div>
         <div class="container-ca">
@@ -463,19 +280,19 @@
                     <div class="footer__text">
                         <p>
                             Before buying website traffic, please familiarize yourself with our Frequently Asked
-                            <a href="faq.html">Questions</a> and read our <a href="termsofservice.html">Terms of
-                                Service</a>
+                            <a href="#">Questions</a> and read our <a href="#">Terms of Service</a>
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="traffic-statistic-new.html">Traffic Statistics</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="contactus.html">Contact</a></li>
+                            <li><a href="#">Home</a></li>
+                            <!-- <li><a href="#">Order</a></li> -->
+                            <li><a href="#">Traffic Statistics</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                         <a href="#" class="footer__fb">FACEBOOK</a>
                     </div>
@@ -486,150 +303,271 @@
     </footer>
 
     <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/aos.js"></script>
+    <script src="js/rangeslider.js"></script>
     <script src="js/select2.min.js"></script>
-    <script src="js/sort-table.min.js"></script>
+    <script src="js/db-plugin.js"></script>
+    <!-- <script src="js/sort-table.min.js"></script> -->
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script> -->
+   
     <script src="js/common.js"></script>
 
+ 
     <script>
         (function ($) {
             $(function () {
-                var isoCountries = [{
-                        id: 'US',
-                        text: 'United States'
-                    },
-                    {
-                        id: 'VT',
-                        text: 'Vietnam'
-                    },
-                    {
-                        id: 'IN',
-                        text: 'India'
-                    },
-                    {
-                        id: 'RU',
-                        text: 'Russia'
-                    },
-                    {
-                        id: 'UK',
-                        text: 'United Kingdom'
-                    },
-                    {
-                        id: 'TH',
-                        text: 'Thailand'
-                    },
-                    {
-                        id: 'AR',
-                        text: 'Argentina'
-                    },
-                    {
-                        id: 'CH',
-                        text: 'China'
-                    },
-                    {
-                        id: 'TK',
-                        text: 'Turkey'
-                    },
-                    {
-                        id: 'IND',
-                        text: 'Indonesia'
-                    },
-                    {
-                        id: 'KZ',
-                        text: 'Kazakhstan'
-                    },
-                    {
-                        id: 'IN',
-                        text: 'Iran'
-                    },
-                    {
-                        id: 'VZ',
-                        text: 'Venezuela'
-                    },
-                    {
-                        id: 'MA',
-                        text: 'Malaysia'
-                    },
-                    {
-                        id: 'BR',
-                        text: 'Brazil'
-                    },
-                    {
-                        id: 'LT',
-                        text: 'Lithuania'
-                    },
-                    {
-                        id: 'GR',
-                        text: 'Georgia'
-                    },
-                    {
-                        id: 'UA',
-                        text: 'Ukraine'
-                    },
-                    {
-                        id: 'LS',
-                        text: 'Laos'
-                    },
-                    {
-                        id: 'UZ',
-                        text: 'Uzbekistan'
-                    },
-                    {
-                        id: 'JN',
-                        text: 'Jordan'
-                    },
-                    {
-                        id: 'MX',
-                        text: 'Mexico'
-                    },
-                    {
-                        id: 'MG',
-                        text: 'Mongolia'
-                    },
-                    {
-                        id: 'PK',
-                        text: 'Pakistan'
-                    },
-                    {
-                        id: 'IQ',
-                        text: 'Iraq'
-                    },
-                    {
-                        id: 'SA',
-                        text: 'South Africa'
-                    },
-                    {
-                        id: 'AU',
-                        text: 'Australia'
-                    },
-                    {
-                        id: 'AS',
-                        text: 'Austria'
-                    },
-                ];
-
-                function formatCountry(country) {
-                    if (!country.id) {
-                        return country.text;
-                    }
-                    var $country = $(
-                        '<span class="flag-icon flag-icon-' + country.id.toLowerCase() +
-                        ' flag-icon-squared"></span>' +
-                        '<span class="flag-text">' + country.text + "</span>"
-                    );
-                    return $country;
-                };
-
-                $("[name='country-choose']").select2({
-                    placeholder: "Choose a country",
-                    templateResult: formatCountry,
-                    data: isoCountries,
-                    allowClear: true,
-                    dropdownCssClass: 'ts-countrydropdown'
-                });
-
-
+                var contr = [ {"text": "Albania", "id": "AL"},
+                    {"text": "Åland Islands", "id": "AX"},
+                    {"text": "Algeria", "id": "DZ"},
+                    {"text": "American Samoa", "id": "AS"},
+                    {"text": "Andorra", "id": "AD"},
+                    {"text": "Angola", "id": "AO"},
+                    {"text": "Anguilla", "id": "AI"},
+                    {"text": "Antarctica", "id": "AQ"},
+                    {"text": "Antigua and Barbuda", "id": "AG"},
+                    {"text": "Argentina", "id": "AR"},
+                    {"text": "Armenia", "id": "AM"},
+                    {"text": "Aruba", "id": "AW"},
+                    {"text": "Australia", "id": "AU"},
+                    {"text": "Austria", "id": "AT"},
+                    {"text": "Azerbaijan", "id": "AZ"},
+                    {"text": "Bahamas (the)", "id": "BS"},
+                    {"text": "Bahrain", "id": "BH"},
+                    {"text": "Bangladesh", "id": "BD"},
+                    {"text": "Barbados", "id": "BB"},
+                    {"text": "Belarus", "id": "BY"},
+                    {"text": "Belgium", "id": "BE"},
+                    {"text": "Belize", "id": "BZ"},
+                    {"text": "Benin", "id": "BJ"},
+                    {"text": "Bermuda", "id": "BM"},
+                    {"text": "Bhutan", "id": "BT"},
+                    {"text": "Bolivia (Plurinational State of)", "id": "BO"},
+                    {"text": "Bonaire, Sint Eustatius and Saba", "id": "BQ"},
+                    {"text": "Bosnia and Herzegovina", "id": "BA"},
+                    {"text": "Botswana", "id": "BW"},
+                    {"text": "Bouvet Island", "id": "BV"},
+                    {"text": "Brazil", "id": "BR"},
+                    {"text": "British Indian Ocean Territory (the)", "id": "IO"},
+                    {"text": "Brunei Darussalam", "id": "BN"},
+                    {"text": "Bulgaria", "id": "BG"},
+                    {"text": "Burkina Faso", "id": "BF"},
+                    {"text": "Burundi", "id": "BI"},
+                    {"text": "Cabo Verde", "id": "CV"},
+                    {"text": "Cambodia", "id": "KH"},
+                    {"text": "Cameroon", "id": "CM"},
+                    {"text": "Canada", "id": "CA"},
+                    {"text": "Cayman Islands (the)", "id": "KY"},
+                    {"text": "Central African Republic (the)", "id": "CF"},
+                    {"text": "Chad", "id": "TD"},
+                    {"text": "Chile", "id": "CL"},
+                    {"text": "China", "id": "CN"},
+                    {"text": "Christmas Island", "id": "CX"},
+                    {"text": "Cocos (Keeling) Islands (the)", "id": "CC"},
+                    {"text": "Colombia", "id": "CO"},
+                    {"text": "Comoros (the)", "id": "KM"},
+                    {"text": "Congo (the Democratic Republic of the)", "id": "CD"},
+                    {"text": "Congo (the)", "id": "CG"},
+                    {"text": "Cook Islands (the)", "id": "CK"},
+                    {"text": "Costa Rica", "id": "CR"},
+                    {"text": "Croatia", "id": "HR"},
+                    {"text": "Cuba", "id": "CU"},
+                    {"text": "Curaçao", "id": "CW"},
+                    {"text": "Cyprus", "id": "CY"},
+                    {"text": "Czechia", "id": "CZ"},
+                    {"text": "Côte d'Ivoire", "id": "CI"},
+                    {"text": "Denmark", "id": "DK"},
+                    {"text": "Djibouti", "id": "DJ"},
+                    {"text": "Dominica", "id": "DM"},
+                    {"text": "Dominican Republic (the)", "id": "DO"},
+                    {"text": "Ecuador", "id": "EC"},
+                    {"text": "Egypt", "id": "EG"},
+                    {"text": "El Salvador", "id": "SV"},
+                    {"text": "Equatorial Guinea", "id": "GQ"},
+                    {"text": "Eritrea", "id": "ER"},
+                    {"text": "Estonia", "id": "EE"},
+                    {"text": "Eswatini", "id": "SZ"},
+                    {"text": "Ethiopia", "id": "ET"},
+                    {"text": "Falkland Islands (the) [Malvinas]", "id": "FK"},
+                    {"text": "Faroe Islands (the)", "id": "FO"},
+                    {"text": "Fiji", "id": "FJ"},
+                    {"text": "Finland", "id": "FI"},
+                    {"text": "France", "id": "FR"},
+                    {"text": "French Guiana", "id": "GF"},
+                    {"text": "French Polynesia", "id": "PF"},
+                    {"text": "French Southern Territories (the)", "id": "TF"},
+                    {"text": "Gabon", "id": "GA"},
+                    {"text": "Gambia (the)", "id": "GM"},
+                    {"text": "Georgia", "id": "GE"},
+                    {"text": "Germany", "id": "DE"},
+                    {"text": "Ghana", "id": "GH"},
+                    {"text": "Gibraltar", "id": "GI"},
+                    {"text": "Greece", "id": "GR"},
+                    {"text": "Greenland", "id": "GL"},
+                    {"text": "Grenada", "id": "GD"},
+                    {"text": "Guadeloupe", "id": "GP"},
+                    {"text": "Guam", "id": "GU"},
+                    {"text": "Guatemala", "id": "GT"},
+                    {"text": "Guernsey", "id": "GG"},
+                    {"text": "Guinea", "id": "GN"},
+                    {"text": "Guinea-Bissau", "id": "GW"},
+                    {"text": "Guyana", "id": "GY"},
+                    {"text": "Haiti", "id": "HT"},
+                    {"text": "Heard Island and McDonald Islands", "id": "HM"},
+                    {"text": "Holy See (the)", "id": "VA"},
+                    {"text": "Honduras", "id": "HN"},
+                    {"text": "Hong Kong", "id": "HK"},
+                    {"text": "Hungary", "id": "HU"},
+                    {"text": "Iceland", "id": "IS"},
+                    {"text": "India", "id": "IN"},
+                    {"text": "Indonesia", "id": "ID"},
+                    {"text": "Iran (Islamic Republic of)", "id": "IR"},
+                    {"text": "Iraq", "id": "IQ"},
+                    {"text": "Ireland", "id": "IE"},
+                    {"text": "Isle of Man", "id": "IM"},
+                    {"text": "Israel", "id": "IL"},
+                    {"text": "Italy", "id": "IT"},
+                    {"text": "Jamaica", "id": "JM"},
+                    {"text": "Japan", "id": "JP"},
+                    {"text": "Jersey", "id": "JE"},
+                    {"text": "Jordan", "id": "JO"},
+                    {"text": "Kazakhstan", "id": "KZ"},
+                    {"text": "Kenya", "id": "KE"},
+                    {"text": "Kiribati", "id": "KI"},
+                    {"text": "Korea (the Democratic People's Republic of)", "id": "KP"},
+                    {"text": "Korea (the Republic of)", "id": "KR"},
+                    {"text": "Kuwait", "id": "KW"},
+                    {"text": "Kyrgyzstan", "id": "KG"},
+                    {"text": "Lao People's Democratic Republic (the)", "id": "LA"},
+                    {"text": "Latvia", "id": "LV"},
+                    {"text": "Lebanon", "id": "LB"},
+                    {"text": "Lesotho", "id": "LS"},
+                    {"text": "Liberia", "id": "LR"},
+                    {"text": "Libya", "id": "LY"},
+                    {"text": "Liechtenstein", "id": "LI"},
+                    {"text": "Lithuania", "id": "LT"},
+                    {"text": "Luxembourg", "id": "LU"},
+                    {"text": "Macao", "id": "MO"},
+                    {"text": "Madagascar", "id": "MG"},
+                    {"text": "Malawi", "id": "MW"},
+                    {"text": "Malaysia", "id": "MY"},
+                    {"text": "Maldives", "id": "MV"},
+                    {"text": "Mali", "id": "ML"},
+                    {"text": "Malta", "id": "MT"},
+                    {"text": "Marshall Islands (the)", "id": "MH"},
+                    {"text": "Martinique", "id": "MQ"},
+                    {"text": "Mauritania", "id": "MR"},
+                    {"text": "Mauritius", "id": "MU"},
+                    {"text": "Mayotte", "id": "YT"},
+                    {"text": "Mexico", "id": "MX"},
+                    {"text": "Micronesia (Federated States of)", "id": "FM"},
+                    {"text": "Moldova (the Republic of)", "id": "MD"},
+                    {"text": "Monaco", "id": "MC"},
+                    {"text": "Mongolia", "id": "MN"},
+                    {"text": "Montenegro", "id": "ME"},
+                    {"text": "Montserrat", "id": "MS"},
+                    {"text": "Morocco", "id": "MA"},
+                    {"text": "Mozambique", "id": "MZ"},
+                    {"text": "Myanmar", "id": "MM"},
+                    {"text": "Namibia", "id": "NA"},
+                    {"text": "Nauru", "id": "NR"},
+                    {"text": "Nepal", "id": "NP"},
+                    {"text": "Netherlands (the)", "id": "NL"},
+                    {"text": "New Caledonia", "id": "NC"},
+                    {"text": "New Zealand", "id": "NZ"},
+                    {"text": "Nicaragua", "id": "NI"},
+                    {"text": "Niger (the)", "id": "NE"},
+                    {"text": "Nigeria", "id": "NG"},
+                    {"text": "Niue", "id": "NU"},
+                    {"text": "Norfolk Island", "id": "NF"},
+                    {"text": "Northern Mariana Islands (the)", "id": "MP"},
+                    {"text": "Norway", "id": "NO"},
+                    {"text": "Oman", "id": "OM"},
+                    {"text": "Pakistan", "id": "PK"},
+                    {"text": "Palau", "id": "PW"},
+                    {"text": "Palestine, State of", "id": "PS"},
+                    {"text": "Panama", "id": "PA"},
+                    {"text": "Papua New Guinea", "id": "PG"},
+                    {"text": "Paraguay", "id": "PY"},
+                    {"text": "Peru", "id": "PE"},
+                    {"text": "Philippines (the)", "id": "PH"},
+                    {"text": "Pitcairn", "id": "PN"},
+                    {"text": "Poland", "id": "PL"},
+                    {"text": "Portugal", "id": "PT"},
+                    {"text": "Puerto Rico", "id": "PR"},
+                    {"text": "Qatar", "id": "QA"},
+                    {"text": "Republic of North Macedonia", "id": "MK"},
+                    {"text": "Romania", "id": "RO"},
+                    {"text": "Russian Federation (the)", "id": "RU"},
+                    {"text": "Rwanda", "id": "RW"},
+                    {"text": "Réunion", "id": "RE"},
+                    {"text": "Saint Barthélemy", "id": "BL"},
+                    {"text": "Saint Helena, Ascension and Tristan da Cunha", "id": "SH"},
+                    {"text": "Saint Kitts and Nevis", "id": "KN"},
+                    {"text": "Saint Lucia", "id": "LC"},
+                    {"text": "Saint Martin (French part)", "id": "MF"},
+                    {"text": "Saint Pierre and Miquelon", "id": "PM"},
+                    {"text": "Saint Vincent and the Grenadines", "id": "VC"},
+                    {"text": "Samoa", "id": "WS"},
+                    {"text": "San Marino", "id": "SM"},
+                    {"text": "Sao Tome and Principe", "id": "ST"},
+                    {"text": "Saudi Arabia", "id": "SA"},
+                    {"text": "Senegal", "id": "SN"},
+                    {"text": "Serbia", "id": "RS"},
+                    {"text": "Seychelles", "id": "SC"},
+                    {"text": "Sierra Leone", "id": "SL"},
+                    {"text": "Singapore", "id": "SG"},
+                    {"text": "Sint Maarten (Dutch part)", "id": "SX"},
+                    {"text": "Slovakia", "id": "SK"},
+                    {"text": "Slovenia", "id": "SI"},
+                    {"text": "Solomon Islands", "id": "SB"},
+                    {"text": "Somalia", "id": "SO"},
+                    {"text": "South Africa", "id": "ZA"},
+                    {"text": "South Georgia and the South Sandwich Islands", "id": "GS"},
+                    {"text": "South Sudan", "id": "SS"},
+                    {"text": "Spain", "id": "ES"},
+                    {"text": "Sri Lanka", "id": "LK"},
+                    {"text": "Sudan (the)", "id": "SD"},
+                    {"text": "Suriname", "id": "SR"},
+                    {"text": "Svalbard and Jan Mayen", "id": "SJ"},
+                    {"text": "Sweden", "id": "SE"},
+                    {"text": "Switzerland", "id": "CH"},
+                    {"text": "Syrian Arab Republic", "id": "SY"},
+                    {"text": "Taiwan (Province of China)", "id": "TW"},
+                    {"text": "Tajikistan", "id": "TJ"},
+                    {"text": "Tanzania, United Republic of", "id": "TZ"},
+                    {"text": "Thailand", "id": "TH"},
+                    {"text": "Timor-Leste", "id": "TL"},
+                    {"text": "Togo", "id": "TG"},
+                    {"text": "Tokelau", "id": "TK"},
+                    {"text": "Tonga", "id": "TO"},
+                    {"text": "Trinidad and Tobago", "id": "TT"},
+                    {"text": "Tunisia", "id": "TN"},
+                    {"text": "Turkey", "id": "TR"},
+                    {"text": "Turkmenistan", "id": "TM"},
+                    {"text": "Turks and Caicos Islands (the)", "id": "TC"},
+                    {"text": "Tuvalu", "id": "TV"},
+                    {"text": "Uganda", "id": "UG"},
+                    {"text": "Ukraine", "id": "UA"},
+                    {"text": "United Arab Emirates (the)", "id": "AE"},
+                    {"text": "United Kingdom of Great Britain and Northern Ireland (the)", "id": "GB"},
+                    {"text": "United States Minor Outlying Islands (the)", "id": "UM"},
+                    {"text": "United States of America (the)", "id": "US"},
+                    {"text": "Uruguay", "id": "UY"},
+                    {"text": "Uzbekistan", "id": "UZ"},
+                    {"text": "Vanuatu", "id": "VU"},
+                    {"text": "Venezuela (Bolivarian Republic of)", "id": "VE"},
+                    {"text": "Viet Nam", "id": "VN"},
+                    {"text": "Virgin Islands (British)", "id": "VG"},
+                    {"text": "Virgin Islands (U.S.)", "id": "VI"},
+                    {"text": "Wallis and Futuna", "id": "WF"},
+                    {"text": "Western Sahara", "id": "EH"},
+                    {"text": "Yemen", "id": "YE"},
+                    {"text": "Zambia", "id": "ZM"},
+                    {"text": "Zimbabwe", "id": "ZW"}
+                    ]
+                
                 var flags = {
                     "AD": "Andorra",
                     "AE": "United Arab Emirates",
@@ -888,54 +826,190 @@
                     "ZW": "Zimbabwe"
                 }
 
+                // console.log(contr);
+                function formatCountry(country) {
+                    if (!country.id) {
+                        return country.text;
+                    }
+                    var $country = $(
+                        '<span class="flag-icon  flag-icon-squared"><img src="img/flag/'+country.id.toLowerCase()+'.png" alt=""></span>' +
+                        '<span class="flag-text">' + country.text + "</span>"
+                    );
+                   
+                    return $country;
+                };
+
+                $("[name='country-choose']").select2({
+                    placeholder: "Choose a country",
+                    templateResult: formatCountry,
+                    data: contr,
+                    allowClear: true,
+                    closeOnSelect: false,
+                    dropdownCssClass: 'ts-countrydropdown'
+                });
 
                 // <?php
                 // $JasonData = file_get_contents('https://claroads.com/trafficstats.json');
                 // ?>
                 // var JasonData =  <?php echo $JasonData; ?>;
-
+              
                 jQuery.ajax({
                     dataType: 'json',
                     url: './js/json.js',
-                    type: 'get',
-                    success: function (data) {
-                        var table
-                        jQuery.each(data, function (idx, obj) {
-                            var flName = obj.type;
-                            var flUrl = obj.type.toLowerCase();
-                            table += ('<tr>');
-                            table += ('<td>' + (idx + 1) + '</td>');
-                            table += ('<td><p><img src="img/flag/' + flUrl +
-                                '.png" alt="India">' + flags[flName] + '</p></td>');
-                            table += ('<td>' + obj.searches + '</td>');
+                    type:  'get',
+                    success:  function (data) {
+                        // console.log(data);
+                        var table 
+                        $.each(data, function (idx, obj) {          
+                            var flName =  obj.type;    
+                            var flUrl = obj.type.toLowerCase();                         
+                            table += ('<tr class="' + obj.type + '">');
+                            table += ('<td>' + (idx + 1) +'</td>');
+                            table += ('<td style="display: none;"> ' + obj.type + '</td>');
+                            table += ('<td><p>' +flags[flName] + '<img src="img/flag/'+flUrl+'.png"></p></td>');
+                            table += ('<td>' + obj.searches +'</td>');
                             table += ('<td>' + obj.cpc + '</td>');
                             table += ('</tr>');
                         });
-                        jQuery(".traffic-statistic-table").html(table);
-                        console.log(data);
-
+                        $(".traffic-statistic-show").html(table);
+                        $(".traffic-table-hide").html(table);
+                    
+                        initTable()
+                        changeText()
                     },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        console.log("some error");
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        console.log("some error");    
                     }
                 });
 
 
+                function initTable (data) {
+                    var table =  $('#sortable').DataTable({
+                        initComplete: function () {
+                            count = 0;
+                            this.api().columns().every( function () {
+                                var title = this.header();
+                                //replace spaces with dashes
+                                title = $(title).html().replace(/[\W]/g, '-');
+                                var column = this;
+                                var select = $('<select id="' + title + '" class="select2" ></select>')
+                                    .appendTo( $(column.footer()).empty() )
+                                    .on( 'change', function () {
+                                        //Get the "text" property from each selected data 
+                                        //regex escape the value and store in array
+                                        var data = $.map( $(this).select2('data'), function( value, key ) {
+                                            return value.text ? '^' + $.fn.dataTable.util.escapeRegex(value.text) + '$' : null;
+                                                    });
+                                        
+                                        //if no data selected use ""
+                                        if (data.length === 0) {
+                                            data = [""];
+                                        }
+                                        
+                                        //join array into string with regex or (|)
+                                        var val = data.join('|');
+                                        
+                                        //search for the option(s) selected
+                                        column.search( val ? val : '', true, false ).draw();
+                                    } );
+                
+                                column.data().unique().sort().each( function ( d, j ) {
+                                    select.append( "<option value='" + d+ "'>" + d + "</option>" );
+                                } );
+                                        
+                                //use column title as selector and placeholder
+                                $('#' + title).select2({
+                                    multiple: true,
+                                    closeOnSelect: false,
+                                    placeholder: "Choose " + title
+                                });
+                                
+                                //initially clear select otherwise first option is selected
+                                $('.select2').val(null).trigger('change');
+                                
+                            } );
+                        },
+                  
+                        language: {
+                            "info": "_START_ - _END_ of _PAGES_",
+                            "infoFiltered": ""
+                        },
+                        
+                    });
+                   
+                }
+                
+                $('.traffstat-pagination__next').on('click', function (e) {
+                    e.preventDefault();
+                    console.log('next');
+                    $('.paginate_button.next').click();
+                    changeText()
+                })
+
+                $('.traffstat-pagination__prev').on('click', function (e) {
+                    e.preventDefault();
+                    console.log('prev');
+                    $('.paginate_button.previous').click();
+                    changeText()
+                })
+
+                function changeText() {
+                    let sortableInfo = $('#sortable_info').text()
+                    $('.traffstat-pagination p').text(sortableInfo)
+                }
+
+
+                $('#country-choose').on('change', function () {
+                    let val = $(this).val()
+                    console.log(val);
+                    if (val != '') {
+                        // $('#Country-Name').val(val);
+                        // $("#Country-Name").trigger('change');
+                        // changeText()
+                   
+                    } else {
+                        $("#Country-Name").val('');
+                        $("#Country-Name").trigger('change');
+                        $( ".traffic-statistic-app" ).html('')
+                        changeText()
+                    }
+                })
+
+                $('.country-choosebtn').on('click', function () {
+                    let val = $('#country-choose').val()
+                    console.log(val);
+                    if (val != '') {
+                        // $('#Country-Name').val(val);
+                        // $("#Country-Name").trigger('change');
+                        changeText()
+                        $(".traffic-statistic-app").html('')
+                        val.map(function (i) {
+                            if ($(".traffic-statistic-app tr").hasClass(i)) {
+                                return
+                            } else {
+                               
+                                $('.traffic-table-hide').find('.'+i).clone().addClass('selectedcountry').prependTo( ".traffic-statistic-app" );
+                            }
+                            console.log(i);
+                        })
+                        
+                        var table1 = document.querySelector(".traffic-statistic-app");
+                        var table2 = document.querySelector(".traffic-statistic-show");
+                        var parentDiv = table2.parentNode
+                        parentDiv.insertBefore(table1, table2);
+                   
+                    } else {
+                        $("#Country-Name").val('');
+                        $("#Country-Name").trigger('change');
+                        $( ".traffic-statistic-app" ).html('')
+                        changeText()
+                    }
+                })
+                
             });
+
         })(jQuery);
     </script>
-
-
-
-
-
-    <style>
-
-    </style>
-
-
-
-
 
 </body>
 
